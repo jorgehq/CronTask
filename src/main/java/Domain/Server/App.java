@@ -6,10 +6,6 @@ import Domain.Notificaciones.NotificacionFaltanViandas;
 import Domain.Notificaciones.NotificacionIncidente;
 import Domain.Repositorios.RepoHeladera;
 import Domain.Repositorios.RepoNotificaciones;
-import Domain.Repositorios.RepoSolicitudColaboracion;
-import Domain.Server.Controlador.*;
-import Domain.Solicitudes.SolicitudColaboracion;
-import io.javalin.Javalin;
 
 import java.time.LocalDate;
 import java.util.List;
@@ -21,7 +17,14 @@ import java.util.stream.Collectors;
 
 public class App {
   public static void main(String[] args) {
-    
+    System.out.println("Iniciando cron jobs...");
+
+    ScheduledExecutorService scheduler = Executors.newScheduledThreadPool(1);
+    scheduler.scheduleAtFixedRate(App::verificarProblemas, 1, 3, TimeUnit.MINUTES);
+
+  }
+
+  public static  void verificarProblemas(){
     System.out.println("=======================================================");
     System.out.println("Cron Buscando Problemas en heladeras caducadas ");
     System.out.println("=======================================================");
