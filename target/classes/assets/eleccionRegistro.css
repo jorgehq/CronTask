@@ -1,0 +1,32 @@
+.buttons {
+    display: flex; /* Alinea los botones horizontalmente */
+    justify-content: center; /* Centra los botones horizontalmente */
+    align-items: center; /* Alinea los botones verticalmente en su contenedor */
+    gap: 100px; /* Espacio entre los botones */
+
+}
+
+/* Botones en forma de contenedor cuadrado */
+.form-button {
+    width: 150px; /* Anchura del botón (cuadrado) */
+    height: 150px; /* Altura del botón (cuadrado) */
+    background-color: #226166; /* Fondo del botón */
+    color: white; /* Color del ícono */
+    border: none;
+    border-radius: 10px; /* Bordes ligeramente redondeados */
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.2s; /* Efectos suaves */
+
+}
+
+/* Efecto hover */
+.form-button:hover {
+    background-color: #226166; /* Cambia el color de fondo al pasar el mouse */
+    transform: scale(1.1); /* Aumenta ligeramente el tamaño */
+}
+
+/* Ajusta el tamaño del ícono */
+.form-button svg {
+    width: 64px; /* Tamaño del ícono */
+    height: 64px;
+}

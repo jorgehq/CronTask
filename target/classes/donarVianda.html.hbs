@@ -1,0 +1,54 @@
+{{# partial "contenido" }}
+    <head>
+      <meta charset="UTF-8">
+          <meta name="viewport" content="width=device-width, initial-scale=1">
+          <link rel="stylesheet" type="text/css" href="/assets/DonarVianda.css">
+        <link rel="stylesheet" type="text/css" href="/assets/general.css">
+
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
+                integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN"
+                crossorigin="anonymous">
+      </head>
+      <body >
+       <h1 class="titulosPantallasSinLayout">Donar vianda</h1>
+
+       {{#if error}}
+       <div class="popup">
+           <div class="popup-content">
+               <span class="close-popup" onclick="window.location.href='/notificaciones';">&times;</span>
+               <p>{{error}}</p>
+           </div>
+       </div>
+       {{/if}}
+
+      <form action="/viandas" method="POST">
+          <div class="contenedor-heladera">
+              <div class="info-contenido">
+              <p><strong>Nombre:</strong> {{heladera.nombre}}</p>
+              <p><strong>Dirección:</strong> {{heladera.direccion.provincia}} {{heladera.direccion.localidad}} {{heladera.direccion.direccion}}</p>
+              <input type="hidden" name="heladera" value="{{heladera.id}}">
+            </div>
+          </div>
+      <div class="row">
+                 <div class="col">
+                     <div class="form-floating">
+                         <input type="date" class="form-control" id="fecha" name="fecha"  required>
+                         <label for="fecha">Fecha Caducidad</label>
+                     </div>
+                     <div class="form-floating">
+                         <input type="text" class="form-control" id="calorias" name="calorias" required>
+                         <label for="calorias">calorias</label>
+                     </div>
+
+                     <div class="form-floating">
+                         <input type="text" class="form-control" id="peso" name="peso" required>
+                         <label for="peso">Peso</label>
+                     </div>
+                    <div class="row" id="botonDonarVianda">
+                        <input class="botonPrincipal" type="submit" value="Crear">
+                    </div>
+      </form>
+
+{{/partial}}
+
+{{> BarraNavegacion.html }}

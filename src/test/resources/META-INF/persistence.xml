@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<persistence xmlns="http://java.sun.com/xml/ns/persistence"
+             xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+             xsi:schemaLocation="http://java.sun.com/xml/ns/persistence
+    http://java.sun.com/xml/ns/persistence/persistence_2_0.xsd"
+             version="2.0">
+
+    <persistence-unit name="simple-persistence-unit" transaction-type="RESOURCE_LOCAL">
+        <provider>org.hibernate.jpa.HibernatePersistenceProvider</provider>
+
+        <!-- clases/-->
+        <class>Domain.Colaborador.MedioDeContacto.Mediodecontacto</class>
+        <class>Domain.Usuarios.Usuario</class>
+        <class>Domain.Heladera.Heladera</class>
+        <class>Domain.Heladera.EstadoHeladera</class>
+        <class>Domain.Colaborador.Colaborador</class>
+        <class>Domain.Heladera.Vianda</class>
+        <class>Domain.Ubicacion.Direccion</class>
+        <class>Domain.Heladera.Sensores.AdapterSensorPeso</class>
+        <class>Domain.Heladera.Sensores.AdapterSensorTemperatura</class>
+        <class>Domain.Colaborador.TipoDeColaboracion.TipoDeColaboracion</class>
+        <class>Domain.Colaborador.TipoDeColaboracion.DistribuirVianda</class>
+        <class>Domain.Colaborador.TipoDeColaboracion.DonarDinero</class>
+        <class>Domain.Colaborador.TipoDeColaboracion.DonarVianda</class>
+        <class>Domain.Colaborador.TipoDeColaboracion.HacerseCargoDeHeladera</class>
+        <class>Domain.Colaborador.TipoDeColaboracion.RegistrarUnaPersonaVulnerable</class>
+        <class>Domain.Tarjeta.Tarjeta</class>
+        <class>Domain.Tarjeta.MovimientoTarjeta</class>
+        <class>Domain.Persona.PersonaVulnerable</class>
+        <class>Domain.Colaborador.Colaboracion</class>
+        <class>Domain.Colaborador.PersonaHumana</class>
+        <class>Domain.Colaborador.PersonaJuridica</class>
+
+        <class>Domain.Notificaciones.Notificacion</class>
+        <class>Domain.Notificaciones.NotificacionIncidente</class>
+        <class>Domain.Notificaciones.NotificacionFaltanViandas</class>
+        <class>Domain.Notificaciones.Sugerencias.Sugerencia</class>
+        <class>Domain.Notificaciones.Sugerencias.SugerenciaUnKilometro</class>
+        <class>Domain.Notificaciones.Sugerencias.SugerenciaMasVacio</class>
+        <class>Domain.Notificaciones.Sugerencias.SugerenciaAlAzar</class>
+
+        <class>Domain.Persona.Tecnico</class>
+        <class>Domain.Persona.Visita</class>
+        <class>Domain.Incidentes.Alerta</class>
+        <class>Domain.Incidentes.FallaTecnica</class>
+
+        <class>Domain.Solicitudes.SolicitudTarjeta</class>
+        <class>Domain.Solicitudes.SolicitudColaboracion</class>
+        <class>Domain.Tarjeta.TarjetaColaborador</class>
+        <class>Domain.Persona.Operador</class>
+
+
+
+
+
+        <class>Domain.Colaborador.RegistroPuntaje.RegistroPuntaje</class>
+
+
+
+        <properties>
+            <property name="hibernate.archive.autodetection" value="class" />
+            <!-- base de datos en memoria, no es necesario descargar nada!!!/-->
+            <!--<property name="hibernate.connection.driver_class" value="org.hsqldb.jdbcDriver" />
+            <property name="hibernate.connection.url" value="jdbc:hsqldb:mem:app-db" />
+            <property name="hibernate.connection.username" value="sa" />
+            <property name="hibernate.connection.password" value="" />
+            <property name="hibernate.dialect" value="org.hibernate.dialect.HSQLDialect" /> -->
+
+            <property name="javax.persistence.jdbc.url" value="jdbc:postgresql://localhost:5432/TPBD"/>
+            <property name="javax.persistence.jdbc.user" value="postgres"/>
+            <property name="javax.persistence.jdbc.password" value="1234"/>
+            <property name="javax.persistence.jdbc.driver" value="org.postgresql.Driver"/>
+
+            <property name="hibernate.show_sql" value="true" />
+            <property name="hibernate.format_sql" value="true" />
+            <property name="use_sql_comments" value="true" />
+            <property name="hibernate.hbm2ddl.auto" value="update" />
+
+
+            <!--property name="hibernate.connection.driver_class" value="com.mysql.cj.jdbc.Driver" />
+            <property name="hibernate.connection.url" value="jdbc:mysql://localhost:3306/prueba_grupo10?serverTimezone=UTC" /-->  <!-- Cambiar para cada uno -->
+            <!--property name="hibernate.connection.username" value="root" />
+            <property name="hibernate.connection.password" value="goku123" /--> <!-- Cambiar para cada uno -->
+            <!--<property name="hibernate.dialect" value="org.hibernate.dialect.MySQLDialect"/> -->
+
+        </properties>
+
+    </persistence-unit>
+
+</persistence>

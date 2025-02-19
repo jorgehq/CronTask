@@ -1,0 +1,99 @@
+<html>
+<head>
+<meta charset="UTF-8">
+    <title>Registrar cuenta persona juridica</title>
+    <link rel="stylesheet" type="text/css" href="/assets/RegistroPersonaHumana.css">
+
+    <link rel="stylesheet" type="text/css" href="/assets/general.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
+                  integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN"
+                  crossorigin="anonymous">
+</head>
+
+<body>
+
+<h1 class="titulosPantallasSinLayout">Crea tu cuenta</h1>
+<form action="/negocios" method="POST">
+      <div class="row">
+           <div class="col">
+               <div class="form-floating">
+                   <input type="email" class="form-control" id="correo" name="correo" placeholder="Ingrese su email" required>
+                   <label for="correo">Correo Electrónico</label>
+               </div>
+               <div class="form-floating">
+                   <input type="password" class="form-control" id="contrasenia" name="contrasenia" placeholder="Contraseña" required>
+                   <label for="contrasenia">Contraseña</label>
+               </div>
+               <div class="form-floating">
+                   <input type="password" class="form-control" id="repetirContrasenia" name="repetirContrasenia" placeholder="Repita la contraseña" required>
+                   <label for="repetirContrasenia">Repita la contraseña</label>
+               </div>
+
+            <div class="form-floating">
+                <input type="text" class="form-control" id="razonsocial" name="razonsocial" placeholder="Razón Social" required>
+                <label for="razonsocial">Razón Social</label>
+            </div>
+            <div class="form-floating">
+                <input type="text" class="form-control" id="Codigo" name="codigoAdmin" placeholder="Codigo" >
+                <label for="Codigo">Codigo Admin</label>
+            </div>
+           </div>
+        <div class="col">
+
+            <div class="form-floating">
+
+                <select name="rubro" id="rubro" class="form-control" required>
+                    <option value=""disabled selected>Seleccione rubro</option>
+                    {{#each rubros}}
+                        <option value="{{this}}">{{this}}</option>
+                    {{/each}}
+                </select>
+            </div>
+
+            <div class="form-floating">
+
+                <select name="tiporazonsocial" id="tiporazonsocial" class="form-control" required>
+                    <option value=""disabled selected>Seleccion Tipo razon de social</option>
+                    {{#each tiposrazonsocial}}
+                        <option value="{{this}}">{{this}}</option>
+                    {{/each}}
+                </select>
+            </div>
+
+            <!-- Campo de Provincia -->
+            <div class="form-floating">
+
+                <select name="provincia" id="provincia" required>
+                    <option value=""disabled selected>Selecccione provincia</option>
+                    {{#each provincias}}
+                    <option value="{{this}}">{{this}}</option>
+                    {{/each}}
+                </select>
+            </div>
+
+            <div class="form-floating">
+
+                <select name="localidad" id="localidad" required>
+                    <option value=""disabled selected>Seleccione localidad</option>
+                    {{#each localidades}}
+                    <option value="{{this}}">{{this}}</option>
+                    {{/each}}
+                </select>
+            </div>
+
+
+            <div class="form-floating">
+                <input type="text" class="form-control" id="domicilio" name="domicilio" placeholder="Domicilio" required>
+                <label for="domicilio">Domicilio</label>
+            </div>
+          </div>
+        </div>
+  </div>
+    <div id="botonSubmit" class="form-floating">
+        <input class="botonPrincipal" type="submit" value="Registrar">
+    </div>
+</form>
+
+
+</body>
+</html>

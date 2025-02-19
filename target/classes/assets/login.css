@@ -1,0 +1,51 @@
+form {
+    height: 300px;
+    width: 416px;
+    margin: 0 auto; /* Centrar el formulario */
+}
+
+/* Contenedor de cada campo del formulario */
+.form-floating {
+    position: relative;
+    margin-bottom: 2rem; /* Espacio entre los campos */
+}
+
+/* Estilos para los inputs */
+.form-control {
+    width: 100%;
+    padding: 10px;
+    font-size: 14px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+/* Estilos para los labels */
+.form-floating label {
+    position: absolute;
+    top: -40px; /* Mover el label arriba del input */
+    left: 0px;
+    font-size: 18px;
+    color: #333;
+}
+
+/* Estilos para el botón de iniciar sesión */
+#botonIniciarSesion {
+    display: flex;
+    justify-content: center;
+    margin-top: 72px;
+}
+
+.botonPrincipal {
+    padding: 10px 20px;
+    font-size: 16px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.botonPrincipal:hover {
+    background-color: #0056b3;
+}

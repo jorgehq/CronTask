@@ -1,0 +1,90 @@
+{{# partial "contenido" }}
+    <head>
+      <meta charset="UTF-8">
+          <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" type="text/css" href="assets/Colaboraciones.css">
+
+        <link rel="stylesheet" type="text/css" href="assets/general.css">
+
+          <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
+                integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN"
+                crossorigin="anonymous">
+      </head>
+      <body >
+        <h1 class="titulosPantallasSinLayout">Colaboraciones</h1>
+      <form action="/colaboracion" method="GET">
+          <div class="row">
+          <div class="col">
+              <div class="form-floating">
+                  <select class="form-control" id="filtro" name="filtro" required>
+                      <option value=""disabled selected>Seleccione filtro</option>
+                      <option value="TODAS">Todas</option>
+                      <option value="NOMBRE">Nombre</option>
+                      <option value="LOCALIDAD">Localidad</option>
+                      <option value="DIRECCION">Direccion</option>
+                  </select>
+                  <label for="Filtro">Filtro</label>
+              </div>
+          </div>
+          <div class="col">
+              <div class="form-floating">
+                  <input type="text" class="form-control" id="dato" name="dato" >
+                  <label for="dato"></label>
+              </div>
+          </div>
+          <div class="col">
+              <div id="botonSubmitFiltro" class="form-floating">
+                  <input class="botonPrincipal" type="submit" value="Buscar">
+              </div>
+          </div>
+          </div>
+      </form>
+
+  <form action="/elecciones-colaboraciones" method="POST">
+      <section id="contenerdorHeladeras">
+          <div class="fondoContenedor">
+              <p>Lista de heladeras</p>
+              <ul>
+                  {{#each heladeras}}
+                  <li>
+                      <input type="checkbox" name="heladeraId" value="{{id}}" id="heladera{{id}}"
+                             {{#if this.estadoHeladera.heladeraAveriada}}disabled {{/if}}>
+                      <label for="heladera{{id}}">
+                          Nombre: {{nombre}}
+                          Ubicación: {{this.direccion.provincia}} {{this.direccion.localidad}} {{this.direccion.direccion}}
+                          {{#if this.estadoHeladera.heladeraAveriada}}Estado: <span style="color: red;"> (Averiada) </span>{{/if}}
+                      </label>
+                  </li>
+                  {{#unless @last}}
+                  <div class="lineaDivisoria"></div>
+                  {{/unless}}
+                  {{/each}}
+              </ul>
+          </div>
+          <div class="row">
+          <div class="col">
+          <div class="form-floating">
+
+                         <select class="form-control" name="eleccion" id="eleccion" required>
+                             <option value=""disabled selected>Seleccione colaboracion</option>
+                             <option value="DINERO">Donar Dinero</option>
+                             <option value="VIANDA">Donar Vianda</option>
+                             <option value="DISTRIBUCION">Distribuir Viandas</option>
+                             <option value="HELADERA">Donar Heladera</option>
+                         </select>
+                        <label for="Filtro">Eleccion</label>
+                     </div>
+          </div>
+              <div class="col">
+                  <div id="botonSubmitColaboracion" class="form-floating">
+                      <input class="botonPrincipal" type="submit" value="Colaborar">
+
+                  </div>
+              </div>
+          </div>
+      </section>
+  </form>
+{{/partial}}
+
+{{> BarraNavegacion.html }}
+

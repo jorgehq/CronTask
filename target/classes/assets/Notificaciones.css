@@ -1,0 +1,57 @@
+form {
+    height: 100px;
+    width: 1700px;
+    margin: 0 auto; /* Centrar el formulario */
+
+}
+
+/* Contenedor de cada campo del formulario */
+.form-floating {
+    position: relative;
+    margin-bottom: 2rem; /* Espacio entre los campos */
+}
+
+.form-control {
+    width: 100%;
+    padding: 10px;
+    font-size: 14px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+
+#BotonColaborar {
+    flex-shrink: 0; /* Evita que el botón se reduzca */
+    height: 42px;
+    width: 10%;
+    display: flex;
+    align-items: center; /* Centra verticalmente el botón */
+    justify-content: flex-end; /* Alinea el botón a la derecha */
+}
+.lineaDivisoria2 {
+
+    height: 2px;
+    padding: 0;
+    margin: 14px 0px;
+}
+.boton-eliminar {
+    position: absolute; /* Posiciona el botón de manera absoluta dentro del contenedor */
+    top: 10px; /* Distancia desde la parte superior del contenedor */
+    right: 10px; /* Distancia desde la parte derecha del contenedor */
+    display: flex;
+    align-items: center; /* Centra verticalmente el botón */
+    justify-content: center; /* Centra horizontalmente el botón */
+}
+
+.eliminar-notificacion {
+    color: red; /* Color rojo para la "X" */
+    text-decoration: none; /* Quita el subrayado del enlace */
+    font-weight: bold; /* Texto en negrita */
+    font-size: 16px; /* Tamaño de la fuente */
+    cursor: pointer; /* Cambia el cursor al pasar sobre la "X" */
+}
+
+.eliminar-notificacion:hover {
+    color: darkred; /* Cambia el color al pasar el mouse */
+}

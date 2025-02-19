@@ -1,0 +1,16 @@
+form {
+    height: 100px;
+    width: 1000px;
+    margin: 0 auto; /* Centrar el formulario */
+
+}
+
+
+
+#BotonFiltraDescargar {
+    width: 300px;
+    justify-content: center;
+    left: 300px;
+    display: flex;
+    margin: 20px 39px
+}

@@ -1,0 +1,8 @@
+Tests\Domain\Colaborador\ColaboradorTest.class
+Tests\Domain\MedioContacto\TestAPImail.class
+Tests\Domain\Repos\RepoColaboradoresTests.class
+Tests\Domain\Persona\PersonaVulnerableTest.class
+Tests\Domain\Heladera\EstadoHeladeraTest.class
+Tests\Domain\Persistencia\HibernateMemoryDBTest.class
+Tests\Domain\Validador\ValidadorDeContraseniasTest.class
+Tests\Domain\Importador\ImportadorColaboracionCsvTests.class
